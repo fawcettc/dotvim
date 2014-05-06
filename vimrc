@@ -14,4 +14,6 @@ syntax on
 set encoding=utf-8
 set t_Co=256
 
+set list listchars=tab:>-,trail:.,extends:>
+set expandtab
 set tabstop=4
