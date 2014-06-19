@@ -16,6 +16,20 @@ set backspace=indent,eol,start
 set mouse=a
 set mousehide
 
+set laststatus=2
+set cmdheight=2
+
+set noshowmode
+
+set ruler
+
+set noerrorbells
+set novisualbell
+
+set backup
+set backupdir=~/.vim/backup
+set directory=~/.vim/tempfiles
+
 filetype off
 
 " set the runtime path to include Vundle and initialise
@@ -78,6 +92,7 @@ for prefix in ['i', 'n', 'v']
 endfor
 
 inoremap jk <ESC>
+let mapleader = ','
 
 syntax on
 set encoding=utf-8
@@ -93,5 +108,25 @@ let g:ycm_extra_conf_globlist = ['~/.vim/*']
 let g:ycm_complete_in_comments = 1
 
 " vim-airline
-set laststatus=2
 let g:airline_powerline_fonts = 1
+
+" NERDTree
+nnoremap <leader>nn :NERDTreeToggle<CR>
+nnoremap <leader>nf :NERDTreeFind<CR>
+let g:NERDTreeShowBookmarks = 1
+let g:NERDTreeChDirMode = 1
+let g:NERDTreeMinimalUI = 1
+
+" vimux
+let g:VimuxUseNearestPane = 1
+
+" tmux navigator
+let g:tmux_navigator_no_mappings = 1
+
+nnoremap <silent> <M-h> :TmuxNavigateLeft<CR>
+nnoremap <silent> <M-j> :TmuxNavigateDown<CR>
+nnoremap <silent> <M-k> :TmuxNavigateUp<CR>
+nnoremap <silent> <M-l> :TmuxNavigateRight<CR>
+
+" default to 80 columns, with highlighting
+let &colorcolumn="80,".join(range(120,999),",")
