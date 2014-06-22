@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 echo 'Installing Vundle...'
-git clone https://github.com/gmarik/vundle.git ./bundle/vundle
+git clone https://github.com/gmarik/vundle.git ./bundle/Vundle.vim
 
 echo 'Creating vimrc symlink'
 cd ~
