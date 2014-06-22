@@ -4,7 +4,9 @@ echo 'Installing Vundle...'
 git clone https://github.com/gmarik/vundle.git ./bundle/vundle
 
 echo 'Creating vimrc symlink'
-ln -s vimrc ~/.vimrc
+cd ~
+ln -s .vim/vimrc .vimrc
+cd .vim
 
 echo 'making backup and tempfiles directories'
 mkdir backup
