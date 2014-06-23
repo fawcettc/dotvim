@@ -112,12 +112,19 @@ set list listchars=tab:>-,trail:.,extends:>
 set expandtab
 set tabstop=4
 
+" Rainbow parens
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
 " YouCompleteMe configuration
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 let g:ycm_extra_conf_globlist = ['~/.vim/*']
 let g:ycm_complete_in_comments = 1
 
-let g:syntastic_check_on_open=1
+" uncomment if you want syntastic to do a syntax check on file open. Can be SLOOOOW
+"let g:syntastic_check_on_open=1
 let g:syntastic_enable_signs=1
 
 " vim-airline
@@ -128,7 +135,6 @@ nnoremap <leader>nn :NERDTreeToggle<CR>
 nnoremap <leader>nf :NERDTreeFind<CR>
 let g:NERDTreeShowBookmarks = 1
 let g:NERDTreeChDirMode = 1
-let g:NERDTreeMinimalUI = 1
 
 " vimux
 let g:VimuxUseNearestPane = 1
