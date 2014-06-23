@@ -17,7 +17,7 @@ vim +PluginInstall +qall
 
 echo 'Compiling YouCompleteMe'
 cd bundle/YouCompleteMe
-./install.sh --clang-completer
+./install.sh --clang-completer "$@"
 
 echo 'Performing vundle plugin installation again'
 vim +PluginInstall +qall
