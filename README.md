@@ -21,7 +21,7 @@ In order to get YouCompleteMe to work, you'll need
 
 If CMake finds the wrong compiler, python version, etc. during
 the YouCompleteMe install, you'll have to install it manually.
-Have a look at Valloric's FAQ, that should solve most common issues.
+Have a look at [Valloric's FAQ](http://github.com/Valloric/YouCompleteMe), that should solve most common issues.
 I may fix some of the more common bugs (usually with YouCompleteMe) at some point.
 
 ## "Chris, what are the weird parts of this setup?"
