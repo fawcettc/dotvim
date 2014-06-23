@@ -60,7 +60,6 @@ I'm happily benefiting from the following awesome plugins:
  * [benmills/vimux](http://github.com/benmills/vimux)
  * [jgdavey/vim-turbux](http://github.com/jgdavey/vim-turbux)
  * [christoomey/vim-tmux-navigator](http://github.com/christoomey/vim-tmux-navigator)
- * [mutewinter/vim-tmux](http://github.com/mutewinter/vim-tmux)
 
 ### git awesomeness
  * [tpope/vim-fugitive](http://github.com/tpope/vim-fugitive)

@@ -30,7 +30,6 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'benmills/vimux'
 Plugin 'jgdavey/vim-turbux'
 Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'mutewinter/vim-tmux'
 
 " VCS integration
 Plugin 'tpope/vim-fugitive'
@@ -138,6 +137,10 @@ let g:vim_markdown_folding_disabled = 1
 
 " vimux
 let g:VimuxUseNearestPane = 1
+map <leader>vp :VimuxPromptCommand<CR>
+map <leader>vl :VimuxRunLastCommand<CR>
+map <leader>vi :VimuxInspectRunner<CR>
+map <leader>vq :VimuxCloseRunner<CR>
 
 " tmux navigator
 let g:tmux_navigator_no_mappings = 1
