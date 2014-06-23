@@ -1,23 +1,23 @@
 # Yet another .vim
 
-    This packaged vim setup is what I have been tweaking and working with
-    for ages, and should require minimal effort to get working on a new machine.
+This packaged vim setup is what I have been tweaking and working with
+for ages, and should require minimal effort to get working on a new machine.
 
-    ## "But what do I doooooooo?"
+## "But what do I doooooooo?"
 
-    Simple:
+Simple:
 
-        git clone git://github.com/fawcettc/dotvim.git ~/.vim
-        cd ~/.vim
-        ./setup.sh
+    git clone git://github.com/fawcettc/dotvim.git ~/.vim
+    cd ~/.vim
+    ./setup.sh
 
-    Note that if you currently have a ~/.vim, this is not going to work.
-    Move it to a safe location and then proceed.
+Note that if you currently have a ~/.vim, this is not going to work.
+Move it to a safe location and then proceed.
 
-    In order to get YouCompleteMe to work, you'll need
-     * vim 7.3.584 or later, compiled with Python 2 support
-     * python 2.7+ as a shared library, along with development headers
-     * CMake
+In order to get YouCompleteMe to work, you'll need
+ * vim 7.3.584 or later, compiled with Python 2 support
+ * python 2.7+ as a shared library, along with development headers
+ * CMake
 
         If CMake finds the wrong compiler, python version, etc. during
         the YouCompleteMe install, you'll have to install it manually.
