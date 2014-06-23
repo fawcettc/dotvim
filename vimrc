@@ -1,51 +1,20 @@
 set nocompatible
 set autoread
 
-set hlsearch
-set ignorecase
-set smartcase
-
-set fo+=o
-set fo-=r
-set fo-=t
-
-set nowrap
-
-set backspace=indent,eol,start
-
-set mouse=a
-set mousehide
-
-set laststatus=2
-set cmdheight=2
-
-set noshowmode
-
-set ruler
-
-set noerrorbells
-set novisualbell
-
-set backup
-set backupdir=~/.vim/backup
-set directory=~/.vim/tempfiles
-
 filetype off
 
 " set the runtime path to include Vundle and initialise
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-" alternatively, can pass a path where Vundle should install plugins
-" call vundle#begin('~/some/path/here')
 
 " let Vundle manage Vundle
 Plugin 'gmarik/Vundle.vim'
 
 " UI and navigation
 Plugin 'bling/vim-airline'
-Plugin 'scrooloose/nerdtree'
 Plugin 'mhinz/vim-signify'
 Plugin 'mhinz/vim-startify'
+Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'kien/rainbow_parentheses.vim'
 
@@ -82,22 +51,63 @@ Plugin 'chrisbra/csv.vim'
 call vundle#end()
 filetype plugin indent on
 
+" pleasing and readable!
 colorscheme zenburn
 
-" Unbind the cursor keys in insert, normal and visual modes.
+" bellbellbellbellbellbellbellbell
+set noerrorbells
+set novisualbell
+
+" Backups etc inside a working directory are such a pain, so move them into
+" the vim directory.
+set backup
+set backupdir=~/.vim/backup
+set directory=~/.vim/tempfiles
+
+set hlsearch
+set ignorecase
+set smartcase
+
+" No line wrapping, but please don't break lines for me, vim.
+set fo+=o
+set fo-=r
+set fo-=t
+
+set nowrap
+set textwidth=119
+
+set backspace=indent,eol,start
+
+set mouse=a
+set mousehide
+
+set laststatus=2
+set cmdheight=2
+
+set noshowmode
+
+set ruler
+
+" Unbind the cursor keys in insert, normal and visual modes. Hardcore.
 for prefix in ['i', 'n', 'v']
   for key in ['<Up>', '<Down>', '<Left>', '<Right>']
     exe prefix . "noremap " . key . " <Nop>"
   endfor
 endfor
 
+" escape is hard, rolling jk is easy
 inoremap jk <ESC>
+
+" comma is pretty easy to hit too!
 let mapleader = ','
 
+" why would you not want syntax highlighting by default??
 syntax on
+
 set encoding=utf-8
 set t_Co=256
 
+" Tabs and trailing spaces are evil.
 set list listchars=tab:>-,trail:.,extends:>
 set expandtab
 set tabstop=4
@@ -106,6 +116,9 @@ set tabstop=4
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 let g:ycm_extra_conf_globlist = ['~/.vim/*']
 let g:ycm_complete_in_comments = 1
+
+let g:syntastic_check_on_open=1
+let g:syntastic_enable_signs=1
 
 " vim-airline
 let g:airline_powerline_fonts = 1
@@ -123,10 +136,12 @@ let g:VimuxUseNearestPane = 1
 " tmux navigator
 let g:tmux_navigator_no_mappings = 1
 
+" awesome tmux navigation shortcuts, for best results your meta key should be
+" something easy to hit.. 
 nnoremap <silent> <M-h> :TmuxNavigateLeft<CR>
 nnoremap <silent> <M-j> :TmuxNavigateDown<CR>
 nnoremap <silent> <M-k> :TmuxNavigateUp<CR>
 nnoremap <silent> <M-l> :TmuxNavigateRight<CR>
 
-" default to 80 columns, with highlighting
-let &colorcolumn="80,".join(range(120,999),",")
+" default to 120 columns, with highlighting at 80 and 120 for reference
+let &colorcolumn="80,120"
