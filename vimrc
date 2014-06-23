@@ -10,6 +10,9 @@ call vundle#begin()
 " let Vundle manage Vundle
 Plugin 'gmarik/Vundle.vim'
 
+" Basic defaults
+Plugin 'tpope/vim-sensible'
+
 " UI and navigation
 Plugin 'bling/vim-airline'
 Plugin 'mhinz/vim-signify'
@@ -31,6 +34,9 @@ Plugin 'mutewinter/vim-tmux'
 
 " VCS integration
 Plugin 'tpope/vim-fugitive'
+
+" colorize RGB colours
+Plugin 'lilydjwg/colorizer'
 
 " Language-specific plugins...
 
@@ -76,17 +82,8 @@ set fo-=t
 set nowrap
 set textwidth=119
 
-set backspace=indent,eol,start
-
 set mouse=a
 set mousehide
-
-set laststatus=2
-set cmdheight=2
-
-set noshowmode
-
-set ruler
 
 " Unbind the cursor keys in insert, normal and visual modes. Hardcore.
 for prefix in ['i', 'n', 'v']
@@ -108,8 +105,9 @@ set encoding=utf-8
 set t_Co=256
 
 " Tabs and trailing spaces are evil.
-set list listchars=tab:>-,trail:.,extends:>
+set list listchars=tab:>-,trail:.
 set expandtab
+set shiftwidth=4
 set tabstop=4
 
 " Rainbow parens
@@ -129,6 +127,8 @@ let g:syntastic_enable_signs=1
 
 " vim-airline
 let g:airline_powerline_fonts = 1
+let g:bufferline_echo = 0
+set noshowmode
 
 " NERDTree
 nnoremap <leader>nn :NERDTreeToggle<CR>
