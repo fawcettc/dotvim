@@ -98,9 +98,6 @@ inoremap jk <ESC>
 " comma is pretty easy to hit too!
 let mapleader = ','
 
-" why would you not want syntax highlighting by default??
-syntax on
-
 set encoding=utf-8
 set t_Co=256
 
@@ -135,6 +132,9 @@ nnoremap <leader>nn :NERDTreeToggle<CR>
 nnoremap <leader>nf :NERDTreeFind<CR>
 let g:NERDTreeShowBookmarks = 1
 let g:NERDTreeChDirMode = 1
+
+" vim-markdown
+let g:vim_markdown_folding_disabled = 1
 
 " vimux
 let g:VimuxUseNearestPane = 1
