@@ -44,6 +44,9 @@ Plugin 'lilydjwg/colorizer'
 " line at indent levels
 Plugin 'Yggdroot/indentLine'
 
+" code formatting
+Plugin 'ompugao/uncrustify-vim'
+
 " Language-specific plugins...
 
 " markdown
@@ -112,6 +115,9 @@ set list listchars=tab:>-,trail:.
 set expandtab
 set shiftwidth=4
 set tabstop=4
+
+" tags
+autocmd FileType java setlocal tags=~/.vim/tags_java,./tags;projects/
 
 " Rainbow parens
 au VimEnter * RainbowParenthesesToggle
@@ -191,3 +197,8 @@ let g:indentLine_char = '|'
 " ctrlP
 let g:ctrlp_map = '<leader>p'
 let g:ctrlp_use_caching=0
+
+" uncrustify
+let g:uncrustify_cfg_file_path="~/.uncrustify/uncrustify.cfg"
+
+map <leader>ff :Uncrustify<CR>
