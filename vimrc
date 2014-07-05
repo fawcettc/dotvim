@@ -22,9 +22,13 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'kien/rainbow_parentheses.vim'
 
 " Completion etc helpers
+Plugin 'ervandew/supertab'
 Plugin 'scrooloose/syntastic'
 Plugin 'Raimondi/delimitMate'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+Plugin 'kien/ctrlp.vim'
 
 " tmux
 Plugin 'benmills/vimux'
@@ -36,6 +40,9 @@ Plugin 'tpope/vim-fugitive'
 
 " colorize RGB colours
 Plugin 'lilydjwg/colorizer'
+
+" line at indent levels
+Plugin 'Yggdroot/indentLine'
 
 " Language-specific plugins...
 
@@ -116,6 +123,13 @@ au Syntax * RainbowParenthesesLoadBraces
 let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
 let g:ycm_extra_conf_globlist = ['~/.vim/*']
 let g:ycm_complete_in_comments = 1
+let g:ycm_min_num_of_chars_for_completion = 1
+
+" play nice with supertab
+let g:ycm_key_list_select_completion=['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion=['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType='<C-n>'
+
 
 " uncomment if you want syntastic to do a syntax check on file open. Can be SLOOOOW
 "let g:syntastic_check_on_open=1
@@ -154,3 +168,26 @@ nnoremap <silent> <M-l> :TmuxNavigateRight<CR>
 
 " default to 120 columns, with highlighting at 80 and 120 for reference
 let &colorcolumn="80,120"
+
+" ECLIM
+let g:EclimCompletionMethod = 'omnifunc'
+let g:airline#extensions#eclim#enabled = 1
+
+" delimitMate
+let delimitMate_expand_cr = 1
+
+" Ultisnips
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+let g:UltiSnipsSnippetDirectories=["UltiSnips", "mysnippets"]
+
+" indentLine
+let g:indentLine_color_term = 228
+let g:indentLine_color_gui = '#FFFF87'
+let g:indentLine_char = '|'
+
+" ctrlP
+let g:ctrlp_map = '<leader>p'
+let g:ctrlp_use_caching=0
