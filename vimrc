@@ -42,7 +42,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'lilydjwg/colorizer'
 
 " line at indent levels
-Plugin 'Yggdroot/indentLine'
+"Plugin 'Yggdroot/indentLine'
 
 " code formatting
 Plugin 'ompugao/uncrustify-vim'
@@ -117,7 +117,8 @@ set shiftwidth=4
 set tabstop=4
 
 " tags
-autocmd FileType java setlocal tags=~/.vim/tags_java,./tags;projects/
+set tags=.git/tags;projects/,./tags;projects/
+autocmd FileType java setlocal tags+=~/.vim/tags_java
 
 " Rainbow parens
 au VimEnter * RainbowParenthesesToggle
@@ -190,13 +191,14 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:UltiSnipsSnippetDirectories=["UltiSnips", "mysnippets"]
 
 " indentLine
-let g:indentLine_color_term = 228
-let g:indentLine_color_gui = '#FFFF87'
-let g:indentLine_char = '|'
+"let g:indentLine_color_term = 228
+"let g:indentLine_color_gui = '#FFFF87'
+"let g:indentLine_char = '|'
 
 " ctrlP
 let g:ctrlp_map = '<leader>p'
 let g:ctrlp_use_caching=0
+let g:ctrlp_open_new_file='r'
 
 " uncrustify
 let g:uncrustify_cfg_file_path="~/.uncrustify/uncrustify.cfg"
